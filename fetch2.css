@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #3E5151;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+.products{
+    width:25%;
+    margin: 20px;
+    background-color: brown;
+    box-shadow: 5px 5px 5px lightblue;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 10px;
+}
+.products h1,h3,p{
+    padding:5px 10px;
+}
+img{
+    width:70%;
+    border-bottom-right-radius: 20px;
+   
+}
+
+

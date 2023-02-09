@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fetch2.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main">
+          
+        </div>
+        
+    </div>
+    <script>
+        fetch('https://dummyjson.com/products')
+            .then((response) => {
+                return response.json()
+            })
+            .then((result) => {
+                showdata(result.products)
+                console.log(result)
+                
+            })
+
+        function showdata(data) {
+            for(let i=0;i<data.length;i++){
+                const head=document.createElement('div')
+                head.setAttribute('class',"products")
+                document.querySelector("#wrapper").append(head)
+                const image = document.createElement('img')
+                image.src = data[i].images[0]
+                const title=document.createElement('h1')
+                title.innerHTML=data[i].title
+                const description=document.createElement('p')
+                description.innerHTML=data[i].description
+                const price=document.createElement('h3')
+                price.innerHTML=data[i].price
+                const discountPercentage=document.createElement('h3')
+                discountPercentage.innerHTML=data[i].discountPercentage
+                // document.querySelector('.main').append(image)
+                // document.querySelector('.main').append(title)
+                // document.querySelector('.main').append(description)
+                // document.querySelector('.main').append(price)
+                // document.querySelector('.main').append(discountPercentage)
+                head.insertAdjacentElement('beforeend',image)
+                head.insertAdjacentElement('beforeend',title)
+                head.insertAdjacentElement('beforeend',description)
+                head.insertAdjacentElement('beforeend',price)
+                head.insertAdjacentElement('beforeend',discountPercentage)
+
+
+            }
+        }
+    </script>
+</body>
+</html>
